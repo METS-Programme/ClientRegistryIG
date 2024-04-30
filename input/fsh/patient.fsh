@@ -74,29 +74,25 @@ Description: "A client registry profile of the Patient resource."
 * birthDate ^label = "Birth Date"
 * active 1..1 MS
 * active ^label = "Active"
+* managingOrganization MS
+* managingOrganization ^label = "Managing Organization"
+* managingOrganization.type 0..1 MS
+* managingOrganization.type
 
 Instance: CRPatientExample
 InstanceOf: CRPatient
 Description: "An example of a patient with a license to krill."
 * identifier[0].system = "http://openclientregistry.org/fhir/sourceid"
 * identifier[0].value = "10EV14"
-* identifier[0].type.text = "OpenMRS ID"
-* identifier[0].type.coding[0].system = "UgandaEMR"
 * identifier[0].use = #official
 * identifier[1].system = "http://health.go.ug/cr/nationalid"
 * identifier[1].value = "CM345678941"
-* identifier[1].type.text = "National ID"
-* identifier[1].type.coding[0].system = "NIRA"
 * identifier[1].use = #usual
 * identifier[2].system = "http://health.go.ug/cr/artnumber"
 * identifier[2].value = "CM345678941"
-* identifier[2].type.text = "ART number"
-* identifier[2].type.coding[0].system = "EMR"
 * identifier[2].use = #usual
 * identifier[3].system = "http://health.go.ug/cr/hin"
 * identifier[3].value = "PT123451"
-* identifier[3].type.text = "Health Identification Number"
-* identifier[3].type.coding[0].system = "EMR"
 * identifier[3].use = #usual
 * name[0].given[0] = "James"
 * name[0].family = "Pond"
@@ -110,6 +106,11 @@ Description: "An example of a patient with a license to krill."
 * birthDate = "1994-10-04"
 * deceasedBoolean = false
 * active = true
+* managingOrganization.identifier[0].system = "testing"
+* managingOrganization.identifier[0].type.coding[0].display = "Health Provider"
+* managingOrganization.identifier[0].type.text = "An organization that provides healthcare services."
+* managingOrganization.identifier[0].type.coding[0].system = "https://hl7.org/fhir/R4/codesystem-organization-type.html#organization-type-prov"
+* managingOrganization.display = "Testing facility"
 * address
   * district = "Kampala"
   * city = "Kampala"
