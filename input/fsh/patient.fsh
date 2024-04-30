@@ -96,7 +96,7 @@ Description: "An example of a patient with a license to krill."
 * identifier[3].use = #usual
 * name[0].given[0] = "James"
 * name[0].family = "Pond"
-* name[0].use = #usual
+* name[0].use = #official
 * telecom[0].value = "test@gmail.com"
 * telecom[0].system = #email
 * telecom[0].use = #usual
@@ -106,11 +106,11 @@ Description: "An example of a patient with a license to krill."
 * birthDate = "1994-10-04"
 * deceasedBoolean = false
 * active = true
+* gender = #male
 * managingOrganization.identifier[0].system = "testing"
 * managingOrganization.identifier[0].type.coding[0].display = "Health Provider"
 * managingOrganization.identifier[0].type.text = "An organization that provides healthcare services."
 * managingOrganization.identifier[0].type.coding[0].system = "https://hl7.org/fhir/R4/codesystem-organization-type.html#organization-type-prov"
-* managingOrganization.display = "Testing facility"
 * address
   * district = "Kampala"
   * city = "Kampala"
