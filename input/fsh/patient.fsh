@@ -3,7 +3,7 @@
 // SUSHI will look for definitions in any file using the .fsh ending.
 Profile: CRPatient
 Parent: Patient
-Description: "An example client registry profile of the Patient resource."
+Description: "A client registry profile of the Patient resource."
 * identifier 0..* MS
 * identifier ^label = "Identifier"
 * identifier ^constraint[0].key = "search-identifier"
@@ -66,15 +66,53 @@ Description: "An example client registry profile of the Patient resource."
 * address.postalCode ^label = "Postal Code"
 * address.country MS
 * address.country ^label = "Country"
-* gender MS
+* deceasedBoolean
+* gender 0..1 MS
 * gender ^label = "Gender"
 * maritalStatus MS
 * birthDate MS
 * birthDate ^label = "Birth Date"
+* active 1..1 MS
+* active ^label = "Active"
 
 Instance: CRPatientExample
 InstanceOf: CRPatient
 Description: "An example of a patient with a license to krill."
-* name
-  * given[0] = "James"
-  * family = "Pond"
+* identifier[0].system = "http://openclientregistry.org/fhir/sourceid"
+* identifier[0].value = "10EV14"
+* identifier[0].type.text = "OpenMRS ID"
+* identifier[0].type.coding[0].system = "UgandaEMR"
+* identifier[0].use = #official
+* identifier[1].system = "http://health.go.ug/cr/nationalid"
+* identifier[1].value = "CM345678941"
+* identifier[1].type.text = "National ID"
+* identifier[1].type.coding[0].system = "NIRA"
+* identifier[1].use = #usual
+* identifier[2].system = "http://health.go.ug/cr/artnumber"
+* identifier[2].value = "CM345678941"
+* identifier[2].type.text = "ART number"
+* identifier[2].type.coding[0].system = "EMR"
+* identifier[2].use = #usual
+* identifier[3].system = "http://health.go.ug/cr/hin"
+* identifier[3].value = "PT123451"
+* identifier[3].type.text = "Health Identification Number"
+* identifier[3].type.coding[0].system = "EMR"
+* identifier[3].use = #usual
+* name[0].given[0] = "James"
+* name[0].family = "Pond"
+* name[0].use = #usual
+* telecom[0].value = "test@gmail.com"
+* telecom[0].system = #email
+* telecom[0].use = #usual
+* telecom[1].system = #phone
+* telecom[1].value = "0705612891"
+* telecom[1].use = #official
+* birthDate = "1994-10-04"
+* deceasedBoolean = false
+* active = true
+* address
+  * district = "Kampala"
+  * city = "Kampala"
+  * line = "kampala city council"
+  * state = "Kampala"
+  * country = "Uganda"
