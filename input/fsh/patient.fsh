@@ -69,7 +69,8 @@ Description: "A client registry profile of the Patient resource."
 * deceasedBoolean
 * gender 0..1 MS
 * gender ^label = "Gender"
-* maritalStatus MS
+* maritalStatus 0..1 MS
+* maritalStatus ^label = "Marital Status"
 * birthDate MS
 * birthDate ^label = "Birth Date"
 * active 1..1 MS
@@ -78,6 +79,16 @@ Description: "A client registry profile of the Patient resource."
 * managingOrganization ^label = "Managing Organization"
 * managingOrganization.type 0..1 MS
 * managingOrganization.type
+* contact 0..* MS
+* contact ^label = "Next of Kin"
+* contact.relationship 1..* MS
+* contact.name 0..1 MS
+* contact.name ^label = "Contact Name"
+* contact.address 0..1 MS
+* contact.address ^label = "Contact Address"
+* contact.telecom 0..* MS
+* contact.telecom ^label = "Contact Te"
+
 
 Instance: CRPatientExample
 InstanceOf: CRPatient
@@ -107,13 +118,27 @@ Description: "An example of a patient with a license to krill."
 * deceasedBoolean = false
 * active = true
 * gender = #male
-* managingOrganization.identifier[0].system = "testing"
+* maritalStatus.text = "M"
+* maritalStatus.coding[0].system = "http://terminology.hl7.org/ValueSet/v3-MaritalStatus"
+* maritalStatus.coding[0].display = " Marital Status"
+* managingOrganization.identifier[0].system = "UgandaEMR"
 * managingOrganization.identifier[0].type.coding[0].display = "Health Provider"
+* managingOrganization.identifier[0].type.coding[0].version = "4.x"
 * managingOrganization.identifier[0].type.text = "An organization that provides healthcare services."
 * managingOrganization.identifier[0].type.coding[0].system = "https://hl7.org/fhir/R4/codesystem-organization-type.html#organization-type-prov"
+* managingOrganization.reference = "1234yghjkluytr"
 * address
   * district = "Kampala"
   * city = "Kampala"
   * line = "kampala city council"
   * state = "Kampala"
   * country = "Uganda"
+* contact.relationship[0].text = "Mother"
+* contact.gender = #female
+* contact.name[0].family = "Sekindi Joseph"
+* contact.address[0].line = "Kyegegwa town council"
+* contact.address[0].country = "Uganda"
+* contact.telecom[0].system = #phone
+* contact.telecom[0].value = "0786123456"
+* contact.telecom[0].use = #official
+
