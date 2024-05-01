@@ -50,20 +50,8 @@ Description: "A client registry profile of the Patient resource."
 * telecom ^constraint[0].human = "The identifier must be unique and another record has this identifier"
 * address 0..* MS
 * address ^label = "Address"
-* address.use MS
-* address.use ^label = "Use"
-* address.type MS
-* address.type ^label = "Type"
-* address.line 1..1 MS
-* address.line ^label = "Line"
-* address.city MS
-* address.city ^label = "City"
 * address.district MS
 * address.district ^label = "District"
-* address.state MS
-* address.state ^label = "State"
-* address.postalCode MS
-* address.postalCode ^label = "Postal Code"
 * address.country MS
 * address.country ^label = "Country"
 * deceasedBoolean
@@ -87,9 +75,14 @@ Description: "A client registry profile of the Patient resource."
 * contact.address 0..1 MS
 * contact.address ^label = "Contact Address"
 * contact.telecom 0..* MS
-* contact.telecom ^label = "Contact Te"
+* contact.telecom ^label = "Contact Telecom"
+* extension contains CrPatientAddress named patientaddress 1..1 MS
+* extension[patientaddress] ^label = "Patient Address"
+* extension[patientaddress].valueReference 1..1 MS
 
 
+
+// instance of CR patient
 Instance: CRPatientExample
 InstanceOf: CRPatient
 Description: "An example of a patient with a license to krill."
@@ -129,16 +122,26 @@ Description: "An example of a patient with a license to krill."
 * managingOrganization.reference = "1234yghjkluytr"
 * address
   * district = "Kampala"
-  * city = "Kampala"
-  * line = "kampala city council"
-  * state = "Kampala"
   * country = "Uganda"
 * contact.relationship[0].text = "Mother"
 * contact.gender = #female
-* contact.name[0].family = "Sekindi Joseph"
+* contact.name[0].family = "Sekindi Joseph"x
 * contact.address[0].line = "Kyegegwa town council"
 * contact.address[0].country = "Uganda"
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "0786123456"
 * contact.telecom[0].use = #official
 
+
+// address extension for patient
+Extension: CrPatientAddress
+Id: cr-patient-address
+Title: "CR Patient Address"
+Description: "CR extension for Patient Address."
+* ^context.type = #element
+* ^context.expression = "Patient"
+* value[x] only Reference(CrJurisdiction)
+* valueReference 1..1 MS
+* valueReference ^label = "Patient Address"
+* valueReference.reference 1..1 MS
+* valueReference.reference ^label = "Patient Address"
