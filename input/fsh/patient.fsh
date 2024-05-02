@@ -115,7 +115,7 @@ Description: "An example of a patient with a license to krill."
 * gender = #male
 * maritalStatus.text = "M"
 * maritalStatus.coding[0].system = "http://terminology.hl7.org/ValueSet/v3-MaritalStatus"
-* maritalStatus.coding[0].display = " Marital Status"
+* maritalStatus.coding[0].display = "Marital Status"
 * managingOrganization.identifier[0].system = "UgandaEMR"
 * managingOrganization.identifier[0].type.coding[0].display = "Health Provider"
 * managingOrganization.identifier[0].type.coding[0].version = "4.x"
@@ -127,14 +127,15 @@ Description: "An example of a patient with a license to krill."
   * country = "Uganda"
 * contact.relationship[0].text = "Mother"
 * contact.gender = #female
-* contact.name[0].family = "Sekindi Joseph"x
+* contact.name[0].family = "Sekindi Joseph"
 * contact.address[0].line = "Kyegegwa town council"
 * contact.address[0].country = "Uganda"
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "0786123456"
 * contact.telecom[0].use = #official
 * communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
-* communication[0].preferred = #true
+* communication[0].preferred = true
+* extension[patientaddress].valueReference = Reference(a1bvHu4FRCq)
 
 
 
