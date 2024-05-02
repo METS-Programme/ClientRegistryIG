@@ -79,6 +79,8 @@ Description: "A client registry profile of the Patient resource."
 * extension contains CrPatientAddress named patientaddress 1..1 MS
 * extension[patientaddress] ^label = "Patient Address"
 * extension[patientaddress].valueReference 1..1 MS
+* communication 0..* MS
+* communication ^label = "Language of commmunication"
 
 
 
@@ -131,6 +133,10 @@ Description: "An example of a patient with a license to krill."
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "0786123456"
 * contact.telecom[0].use = #official
+* communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
+* communication[0].preferred = #true
+
+
 
 
 // address extension for patient
