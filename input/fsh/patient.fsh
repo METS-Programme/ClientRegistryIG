@@ -105,10 +105,10 @@ Description: "An example of a patient with a license to krill."
 * name[0].use = #official
 * telecom[0].value = "test@gmail.com"
 * telecom[0].system = #email
-* telecom[0].use = #usual
+* telecom[0].use = #work
 * telecom[1].system = #phone
 * telecom[1].value = "0705612891"
-* telecom[1].use = #official
+* telecom[1].use = #home
 * birthDate = "1994-10-04"
 * deceasedBoolean = false
 * active = true
@@ -132,7 +132,7 @@ Description: "An example of a patient with a license to krill."
 * contact.address[0].country = "Uganda"
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "0786123456"
-* contact.telecom[0].use = #official
+* contact.telecom[0].use = #home
 * communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
 * communication[0].preferred = true
 * extension[patientaddress].valueReference = Reference(a1bvHu4FRCq)
