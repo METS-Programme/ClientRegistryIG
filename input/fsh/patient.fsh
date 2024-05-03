@@ -88,7 +88,7 @@ Description: "A client registry profile of the Patient resource."
 Instance: CRPatientExample
 InstanceOf: CRPatient
 Description: "An example of a patient with a license to krill."
-* identifier[0].system = "http://openclientregistry.org/fhir/sourceid"
+* identifier[0].system = "http://clientregistry.org/openmrs"
 * identifier[0].value = "10EV14"
 * identifier[0].use = #official
 * identifier[1].system = "http://health.go.ug/cr/nationalid"
