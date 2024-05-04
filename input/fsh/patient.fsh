@@ -63,10 +63,6 @@ Description: "A client registry profile of the Patient resource."
 * birthDate ^label = "Birth Date"
 * active 1..1 MS
 * active ^label = "Active"
-* managingOrganization MS
-* managingOrganization ^label = "Managing Organization"
-* managingOrganization.type 0..1 MS
-* managingOrganization.type
 * contact 0..* MS
 * contact ^label = "Next of Kin"
 * contact.relationship 1..* MS
@@ -81,6 +77,10 @@ Description: "A client registry profile of the Patient resource."
 * extension[patientaddress].valueReference 1..1 MS
 * communication 0..* MS
 * communication ^label = "Language of commmunication"
+* managingOrganization 	0..1 MS
+* managingOrganization.reference 0..1 MS
+* managingOrganization.reference ^label = "Managing Organization"
+* managingOrganization only Reference(CROrganization)
 
 
 
@@ -116,12 +116,6 @@ Description: "An example of a patient with a license to krill."
 * maritalStatus.text = "M"
 * maritalStatus.coding[0].system = "http://terminology.hl7.org/ValueSet/v3-MaritalStatus"
 * maritalStatus.coding[0].display = "Marital Status"
-* managingOrganization.identifier[0].system = "UgandaEMR"
-* managingOrganization.identifier[0].type.coding[0].display = "Health Provider"
-* managingOrganization.identifier[0].type.coding[0].version = "4.x"
-* managingOrganization.identifier[0].type.text = "An organization that provides healthcare services."
-* managingOrganization.identifier[0].type.coding[0].system = "https://hl7.org/fhir/R4/codesystem-organization-type.html#organization-type-prov"
-* managingOrganization.reference = "1234yghjkluytr"
 * address
   * district = "Kampala"
   * country = "Uganda"
@@ -136,7 +130,7 @@ Description: "An example of a patient with a license to krill."
 * communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
 * communication[0].preferred = true
 * extension[patientaddress].valueReference = Reference(a1bvHu4FRCq)
-
+* managingOrganization.reference = Reference(CROrganizationExample)
 
 
 
