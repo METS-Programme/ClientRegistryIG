@@ -130,7 +130,7 @@ Description: "An example of a patient with a license to krill."
 * communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
 * communication[0].preferred = true
 * extension[patientaddress].valueReference = Reference(a1bvHu4FRCq)
-* managingOrganization.reference = Reference(CROrganizationExample)
+* managingOrganization = Reference(CROrganizationExample)
 
 
 
