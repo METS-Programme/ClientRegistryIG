@@ -55,6 +55,7 @@ Description: "A client registry profile of the Patient resource."
 * address.country MS
 * address.country ^label = "Country"
 * deceasedBoolean
+* deceasedDateTime
 * gender 0..1 MS
 * gender ^label = "Gender"
 * maritalStatus 0..1 MS
@@ -113,7 +114,8 @@ Description: "An example of a patient with a license to krill."
 * telecom[1].value = "0705612891"
 * telecom[1].use = #home
 * birthDate = "1994-10-04"
-* deceasedBoolean = false
+* deceasedBoolean = true
+* deceasedDateTime = "1994-10-04"
 * active = true
 * gender = #male
 * maritalStatus.text = "M"
