@@ -100,6 +100,9 @@ Description: "An example of a patient with a license to krill."
 * identifier[3].system = "http://health.go.ug/cr/hin"
 * identifier[3].value = "PT123451"
 * identifier[3].use = #usual
+* identifier[4].system = "http://health.go.ug/cr/passport"
+* identifier[4].value = "PT12345123"
+* identifier[4].use = #usual
 * name[0].given[0] = "James"
 * name[0].family = "Pond"
 * name[0].use = #official
