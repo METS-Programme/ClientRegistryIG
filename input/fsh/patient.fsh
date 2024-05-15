@@ -119,6 +119,7 @@ Description: "An example of a patient with a license to krill."
 * address
   * district = "Kampala"
   * country = "Uganda"
+  * use = #home
 * contact.relationship[0].text = "Mother"
 * contact.gender = #female
 * contact.name[0].family = "Sekindi Joseph"
