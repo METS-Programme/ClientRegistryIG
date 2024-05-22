@@ -10,7 +10,16 @@ SUSHI requires Node.js. To install Node.js, go to https://nodejs.org/ and select
 
 Ensure that Node.js is correctly installed by opening a command window and typing the following two commands. Each command should return a version number.
 
-### Step 2: Install SUSHI
+### Step 2: Install Jekyll
+
+Install ruby and ruby gems: https://www.ruby-lang.org/en/documentation/installation/
+
+```
+gem install jekyll
+
+```
+
+### Step 3: Install SUSHI
 
 To install SUSHI, open up a command prompt and type the following command:
 
@@ -19,7 +28,7 @@ To install SUSHI, open up a command prompt and type the following command:
 
 ```
 
-### Step 3 : Clone the repository from git.
+### Step 4 : Clone the repository from git.
 
 ```
 git clone  https://github.com/METS-Programme/ClientRegistryIG.git
@@ -27,5 +36,26 @@ git clone  https://github.com/METS-Programme/ClientRegistryIG.git
 cd ClientRegistryIG
 
 sushi .
+
+```
+
+### Step 5 : Update IG Publisher
+
+```
+./_updatePublisher.sh
+
+```
+
+### Step 6 : Run IG Publisher
+
+```
+./_genonce.sh
+
+```
+
+### Step 7 : Open Publisher IG
+
+```
+Open `./output/
 
 ```
