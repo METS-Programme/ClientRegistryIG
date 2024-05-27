@@ -115,11 +115,11 @@ Description: "An example of a patient with a license to krill."
 * telecom[1].use = #home
 * birthDate = "1994-10-04"
 * deceasedBoolean = true
-* active = true
+* active = false
 * gender = #male
+* maritalStatus.coding[0].system = "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"
+* maritalStatus.coding[0].display = "Married"
 * maritalStatus.text = "M"
-* maritalStatus.coding[0].system = "http://hl7.org/fhir/ValueSet/marital-status"
-* maritalStatus.coding[0].display = "Marital Status"
 * address
   * district = "Kampala"
   * country = "Uganda"
