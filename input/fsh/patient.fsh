@@ -115,11 +115,10 @@ Description: "An example of a patient with a license to krill."
 * telecom[1].use = #home
 * birthDate = "1994-10-04"
 * deceasedBoolean = true
-* deceasedDateTime = "1994-10-04"
 * active = true
 * gender = #male
 * maritalStatus.text = "M"
-* maritalStatus.coding[0].system = "http://terminology.hl7.org/ValueSet/v3-MaritalStatus"
+* maritalStatus.coding[0].system = "http://hl7.org/fhir/ValueSet/marital-status"
 * maritalStatus.coding[0].display = "Marital Status"
 * address
   * district = "Kampala"
@@ -133,7 +132,7 @@ Description: "An example of a patient with a license to krill."
 * contact.telecom[0].system = #phone
 * contact.telecom[0].value = "0786123456"
 * contact.telecom[0].use = #home
-* communication[0].language = urn:ietf:bcp:47#en-US "English (UK)"
+* communication[0].language = urn:ietf:bcp:47#en-US "English (United States)"
 * communication[0].preferred = true
 * extension[patientaddress].valueReference = Reference(a1bvHu4FRCq)
 * managingOrganization = Reference(CROrganizationExample)
